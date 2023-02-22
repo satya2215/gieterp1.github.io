@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form using java script</title>
+    <style>
+        *
+        {
+
+            margin:0 auto;
+            /* padding:auto; */
+            box-sizing: border-box;
+           /* background:linear-gradient(120deg,rgb(41, 12, 15)0%,rgb(21, 59, 44)30%,rgba(122,34,43,1)100%); */
+        }
+        body{
+            background:linear-gradient(120deg,rgb(174, 152, 155)0%,rgb(203, 232, 220)30%,rgb(230, 185, 189)100%);
+        }
+      .container
+      {
+        text-align: center;
+        justify-content: center;
+        margin:70px;
+        /* background-color: rgb(108, 9, 9); */
+
+        background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(0, 220, 190) 100%);
+        height:100vh;
+        padding:130px;
+        border-radius: 30px;
+        
+      }
+      .form
+      {
+       padding:50px;
+        width:300px;
+        height:480px;
+        /* background:linear-gradient(90deg ,rgb(225, 141, 85) 0%,rgb(199, 98, 169) 30%,rgb(145, 33, 67) 100%); */
+        border-radius: 20px;
+        background-color: azure;
+      }
+      .frm{
+        margin-top: 20px;
+        
+      }
+      #txt
+      {
+        border-radius: 5px;
+      }
+      #pass
+      {
+        border-radius: 5px;
+      }
+      #confirm
+      {
+        border-radius: 5px;
+      }
+      .btn
+      {
+        border-radius: 20px;
+        background-color:black;
+        width:200px;
+        height:40px;
+        /* z-index: 22px; */
+      }
+      .btn:hover{
+        background-color:rgb(124, 18, 74);
+        
+      }
+     a
+     {
+        color:white;
+        text-decoration: none;
+        text-transform: uppercase;
+        
+     }
+     .log
+     {
+        color:rgb(19, 5, 32);
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bolder;
+     }
+     .chk
+     {
+        text-align:start;
+        color:rgba(83, 77, 77, 0.592);
+     }
+     
+        
+    </style>
+</head>
+<body >
+    
+    <div class="container">
+        <div class="form">
+            <div class="log"> LOGIN FORM</div>
+            <br>
+            <hr>
+            <hr width="200px" >
+            <form class="frm">
+              <lebel for="username"> User Name</lebel>
+              <br><br>
+              <input name="username" autocomplete="off" type="text" id="txt" placeholder="Name"/>
+              <br><br>
+              <lebel for="password">password</lebel>
+              <br><br>
+              <input name="password" type="password" id="pass"  placeholder="password" onkeyup="passcheak(this.value)"/>
+              <br><br>
+              <lebel for="confirm"> confirm password</lebel>
+              <br><br>
+              <input name="confirm" type="password" id="confirm" placeholder="confirm password"/>
+              <br>
+              <div class="chk">
+              <lebel class="cheak"> 8 characters</lebel>
+              <br>
+              <lebel class="cheak"> 1 uppercase</lebel>
+              <br>
+              <lebel class="cheak"> 1 digit</lebel>
+              <br>
+              <lebel class="cheak"> 1 lowercase</lebel>
+              <br>
+              <lebel class="cheak"> 1 special characters</lebel>
+            </div>
+        
+            <button class="btn"><a href="hello.html">submit </a></button>
+        </form>
+        </div>
+    </div>
+</body>
+<script>
+ function passcheak(sat){
+  var passclass=document.getElementsByClassName('cheak');
+  const eightchar=new RegExp('(?=.{8,})');
+  const uppercase=new RegExp('(?=.*[A-Z])');
+  const lowercase=new RegExp('(?=.*[a-z])');
+  const digit=new RegExp('(?=.*[0-9])');
+  const specialchar=new RegExp('(?=.*[!@#\$%\^&\*])');
+  if(eightchar.test(sat)){
+    passclass[0].style.color="green";
+  }
+  else{
+    passclass[0].style.color="rgba(83, 77, 77, 0.592)";
+  }
+  if(uppercase.test(sat)){
+    passclass[1].style.color="green";
+  }
+  else{
+    passclass[1].style.color="rgba(83, 77, 77, 0.592)";
+  }
+  if(lowercase.test(sat)){
+    passclass[3].style.color="green";
+  }
+  else{
+    passclass[3].style.color="rgba(83, 77, 77, 0.592)";
+  }
+  if(digit.test(sat)){
+    passclass[2].style.color="green";
+  }
+  else{
+    passclass[2].style.color="rgba(83, 77, 77, 0.592)";
+  }
+  if(specialchar.test(sat)){
+    passclass[4].style.color="green";
+  }
+  else{
+    passclass[4].style.color="rgba(83, 77, 77, 0.592)";
+  }
+ }
+</script>
+</html>
